@@ -1,2 +1,2 @@
-# yii2admin
-yii2admin
+# template
+yii2-admin-template
