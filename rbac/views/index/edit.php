@@ -45,10 +45,10 @@ EOT;
 $this->registerJs($js, 3);
 $this->registerJs($valid, 3);*/
 ?>
-<link href="@static/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet">
-<script src="@static/plugins/jstree/dist/jstree.min.js"></script>
-<script src="@static/plugins/bootstrap-toastr/toastr.js"></script>
-<script src="@static/js/app.min.js"></script>
+<link href="/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet">
+<script src="/plugins/jstree/dist/jstree.min.js"></script>
+<script src="/plugins/bootstrap-toastr/toastr.js"></script>
+<script src="/js/app.min.js"></script>
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="portlet box blue-madison">
