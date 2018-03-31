@@ -1,7 +1,4 @@
-<link href="/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet">
-<script src="/plugins/jstree/dist/jstree.min.js"></script>
-<script src="/plugins/bootstrap-toastr/toastr.js"></script>
-<script src="/js/app.min.js"></script>
+<link href="<?= ASSET_HOST?>/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet">
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="portlet box blue-madison">
@@ -103,7 +100,12 @@
         </div>
     </div>
 </div>
+<script src="<?= ASSET_HOST?>/plugins/bootstrap-toastr/toastr.js"></script>
+<script src="<?= ASSET_HOST?>/js/app.min.js"></script>
 <script>
+    <?php
+    echo file_get_contents(ASSET_HOST.'/plugins/jstree/dist/jstree.min.js')
+    ?>
 
     var tree = $('#tree').jstree({
         'plugins': ["checkbox"],
