@@ -53,7 +53,7 @@ $nav = \wm00689\rbac\common::nav();
 
                 <i class="icon-earphones"></i>
 
-                <img src="/themes/music/images/logo.png" alt="." class="hide">
+                <img src="<?= ASSET_HOST?>/music/images/logo.png" alt="." class="hide">
 
                 <span class="hidden-nav-xs m-l-sm">Musik</span>
 
@@ -135,7 +135,7 @@ $nav = \wm00689\rbac\common::nav();
 
                     <span class="pull-left thumb-sm">
 
-                      <img src="/themes/music/images/a0.png" alt="..." class="img-circle">
+                      <img src="<?= ASSET_HOST?>/music/images/a0.png" alt="..." class="img-circle">
 
                     </span>
 
@@ -184,7 +184,7 @@ $nav = \wm00689\rbac\common::nav();
 
               <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
 
-                <img src="/themes/music/images/a0.png" alt="...">
+                <img src="<?= ASSET_HOST?>/music/images/a0.png" alt="...">
 
               </span>
 
@@ -297,7 +297,7 @@ $nav = \wm00689\rbac\common::nav();
 
                       <span class="thumb-sm avatar pull-left m-l-xs">
 
-                        <img src="/themes/music/images/a3.png" class="dker" alt="...">
+                        <img src="<?= ASSET_HOST?>/music/images/a3.png" class="dker" alt="...">
 
                         <i class="on b-light"></i>
 
