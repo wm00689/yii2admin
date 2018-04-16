@@ -1,4 +1,4 @@
-<link href="/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet">
+<link href="<?= ASSET_HOST?>/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet">
 
 <div class="modal-dialog">
     <div class="modal-content">
@@ -13,7 +13,7 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                <form action="<?= \yii\helpers\Url::to(['/admin/rbac/role/add']); ?>" class="form-horizontal validform"
+                <form action="<?= \yii\helpers\Url::to(['/admin/user/role/add']); ?>" class="form-horizontal validform"
                       method="post">
                     <input type="hidden" name="<?= Yii::$app->request->csrfParam ?>"
                            value="<?= Yii::$app->request->csrfToken ?>">

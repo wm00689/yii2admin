@@ -45,6 +45,11 @@ class AdminUser extends Model
         return User::find()->where(['id' => $id])->one();
     }
 
+    public  function find_one($id)
+    {
+        return User::find()->where(['id' => $id])->one();
+    }
+
     /**
      * Signs user up.
      *

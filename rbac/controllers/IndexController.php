@@ -23,6 +23,9 @@ use yii\web\NotFoundHttpException;
 
 class IndexController extends Controller
 {
+
+    static $admin_user;
+
     public function behaviors()
     {
         return [
@@ -49,6 +52,7 @@ class IndexController extends Controller
         return $this->render('index', ['users' => $users]);
     }
 
+
     public function actionAdd()
     {
         $permissions = PermissonForm::permissions();
@@ -58,7 +62,7 @@ class IndexController extends Controller
 
         if (Yii::$app->request->isAjax) {
             if (Yii::$app->request->isPost) {
-                $user = new AdminUser();
+                $user = $this->get_admin_user();
 
                 $post = Yii::$app->request;
 
@@ -90,22 +94,33 @@ class IndexController extends Controller
 
         if (Yii::$app->request->isAjax) {
 
-            $user = AdminUser::findOne($user_id);
+           // $user = AdminUser::findOne($user_id);
+
+           // $get_admin_user =  $this->get_admin_user();
+            $admin_user =  self::$admin_user;
+            $user = $admin_user::findOne($user_id);
             $request = Yii::$app->request;
+
             if ($post = $request->post()) {
+
+                $post['Member'] = $post['User'];
+
                 if ($user->load($post) && $user->validate() && $user->save()) {
+
                     $auth = Yii::$app->authManager;
                     $auth->revokeAll($user->id);
-                    AdminUser::add_roles($user->id, $request->post('name'));
-                    AdminUser::add_permissions($user->id, $request->post('permissions'));
+                    $admin_user::add_roles($user->id, $request->post('name'));
+                    $admin_user::add_permissions($user->id, $request->post('permissions'));
 
                     return json_encode(['status' => 'y', 'info' => '编辑用户成功'.$request->post('permissions')]);
                 } else {
                     $error = $user->getFirstErrors();
+
                     return json_encode(['status' => 'n', 'info' => array_shift($error)]);
                 }
 
             } else {
+                Yii::info('test','aaaa');
                 return $this->renderPartial('edit', ['permissions' => json_encode($editTreeByItems), 'user' => $user, 'roles' => $roles]);
             }
         }
